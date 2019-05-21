@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners
+                    android:topLeftRadius="4dp"
+                    android:bottomLeftRadius="4dp"
+                    android:topRightRadius="4dp"
+                    android:bottomRightRadius="4dp" />
+            <solid android:color="#0000" />
+            <padding
+                    android:left="@dimen/edittext_padding_horizontal"
+                    android:right="@dimen/edittext_padding_horizontal"
+                    android:top="@dimen/edittext_padding_vertical"
+                    android:bottom="@dimen/edittext_padding_vertical" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners
+                    android:topLeftRadius="4dp"
+                    android:bottomLeftRadius="4dp"
+                    android:topRightRadius="4dp"
+                    android:bottomRightRadius="4dp" />
+            <solid android:color="@color/colorLightOrange" />
+            <padding
+                    android:left="@dimen/edittext_padding_horizontal"
+                    android:right="@dimen/edittext_padding_horizontal"
+                    android:top="@dimen/edittext_padding_vertical"
+                    android:bottom="@dimen/edittext_padding_vertical" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                    android:topLeftRadius="4dp"
+                    android:bottomLeftRadius="4dp"
+                    android:topRightRadius="4dp"
+                    android:bottomRightRadius="4dp" />
+            <solid android:color="@color/colorLightOrange" />
+            <padding
+                    android:left="@dimen/edittext_padding_horizontal"
+                    android:right="@dimen/edittext_padding_horizontal"
+                    android:top="@dimen/edittext_padding_vertical"
+                    android:bottom="@dimen/edittext_padding_vertical" />
+        </shape>
+    </item>
+</selector>
