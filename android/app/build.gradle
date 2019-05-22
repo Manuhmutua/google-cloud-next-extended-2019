@@ -20,15 +20,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-// stored in the gradle properties file
-    buildTypes.each {
-        it.buildConfigField 'String', 'TWITTER_CONSUMER_KEY', TwitterConsumerKey
-        it.buildConfigField 'String', 'TWITTER_CONSUMER_SECRET', TwitterConsumerSecret
-        it.buildConfigField 'String', 'TWITTER_TOKEN_SECRET', TwitterTokenSecret
-        it.buildConfigField 'String', 'TWITTER_TOKEN', TwitterToken
-        it.buildConfigField 'String', 'APP_ID', APP_ID
-        it.buildConfigField 'String', 'APPLICATION_KEY', APPLICATION_KEY
-    }
 }
 
 dependencies {
