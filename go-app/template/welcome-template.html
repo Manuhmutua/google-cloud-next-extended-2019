@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font|Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
     <style type="text/css">
-        body  {
-            min-height:100%;
-            background-image: url("background.jpeg"), linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.3));
-            background-blend-mode: overlay;
-            background-size:cover
+        body {
+            min-height: 100%;
+            background-size: cover;
+            background-color: #FEE140;
+            background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+
         }
 
         .welcome {
-            font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+            font-family: 'Ubuntu', sans-serif;
             font-size: 3rem;
             color: aliceblue;
+        }
+
+        h4 {
+            font-family: 'Cute Font', cursive;
+            font-size: 8rem;
+            color: #FEE140;
+            animation-duration: 8s;
         }
 
         .center {
@@ -21,12 +33,20 @@
             display: flex;
             justify-content: center;
             align-items: center
-        }​
+        }
+
+        ​
     </style>
     <meta charset="UTF-8">
-    <title>Welcome {{.Name}}</title>
+    <title>Random Name Picker</title>
 </head>
+
 <body>
-<div class="welcome center">Welcome <h4>{{.Name}}</h4>, Your id is  <h4>{{.ID}}</h4></div>
+    <div class="welcome center">
+        <h3>Welcome </h3>
+        &nbsp
+        <h4 class=" animated delay-2s tada "> {{.Name}}</h4>
+    </div>
 </body>
+
 </html>
