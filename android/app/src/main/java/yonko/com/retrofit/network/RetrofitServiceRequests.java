@@ -1,9 +1,9 @@
 package yonko.com.retrofit.network;
 
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
+import retrofit2.http.*;
 import yonko.com.retrofit.Constants;
 
 public interface RetrofitServiceRequests {
@@ -23,4 +23,6 @@ public interface RetrofitServiceRequests {
             @Query(Constants.FROM) String from,
             @Query(Constants.TO) String to)
     ;
+    @POST
+    Call<ResponseBody> postRequest(@Url String endpoint, @Header("Content-Type") String headers, @Body RequestBody requestBody);
 }

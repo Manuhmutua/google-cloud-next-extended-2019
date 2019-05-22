@@ -26,7 +26,7 @@ class RetrofitService {
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
-                    .baseUrl(RetrofitVariables.getFoodBaseUrl())
+                    .baseUrl(RetrofitVariables.getBaseUrl())
                     .addConverterFactory(GsonConverterFactory.create(gson));
 
     private static Retrofit retrofit = builder.build();

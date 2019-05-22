@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Retrofit</string>
+    <string name="app_name">Random Name Picker</string>
     <string name="action_settings">Settings</string>
     <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
         has been the industry\'s s
     </string>
     <string name="default_name">\@\John Doeee</string>
+    <string name="enter_name">Enter a name</string>
 </resources>
