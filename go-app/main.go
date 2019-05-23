@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 
 	"github.com/gorilla/mux"
@@ -44,8 +45,14 @@ func ShowSite(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// Important for cloud run
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	router := mux.NewRouter()
 	router.HandleFunc("/", ShowSite).Methods("GET")
 	router.HandleFunc("/people", CreatePersonEndpoint).Methods("POST")
-	log.Fatal(http.ListenAndServe(":12345", router))
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
