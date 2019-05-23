@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"path/filepath"
 
 	"github.com/gorilla/mux"
 )
@@ -28,8 +29,9 @@ func CreatePersonEndpoint(w http.ResponseWriter, req *http.Request) {
 }
 
 func ShowSite(w http.ResponseWriter, r *http.Request) {
+	filePrefix, _ := filepath.Abs("./template/")
 
-	templates := template.Must(template.ParseFiles("template/welcome-template.html"))
+	templates := template.Must(template.ParseFiles(filePrefix + "/welcome-template.html"))
 
 	if name := r.FormValue("name"); name != "" {
 		People[len(People)-1].Name = name;
@@ -39,11 +41,9 @@ func ShowSite(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
-
 }
 
 func main() {
-
 	router := mux.NewRouter()
 	router.HandleFunc("/", ShowSite).Methods("GET")
 	router.HandleFunc("/people", CreatePersonEndpoint).Methods("POST")
