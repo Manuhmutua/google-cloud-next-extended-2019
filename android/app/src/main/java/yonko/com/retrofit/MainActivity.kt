@@ -14,10 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import yonko.com.retrofit.contracts.TweetContract
-import yonko.com.retrofit.models.TweetObJect.TweetPresenter
-import yonko.com.retrofit.models.recipe.RecipeResponse
 import java.util.*
-
 
 class MainActivity : AppCompatActivity(), TweetContract.View {
 
@@ -71,7 +68,7 @@ class MainActivity : AppCompatActivity(), TweetContract.View {
         }
     }
 
-    override fun showProgressBar(showProgressBar: Boolean) {
+    private fun showProgressBar(showProgressBar: Boolean) {
         if (showProgressBar) {
             progress_bar.visibility = View.VISIBLE
         } else {
@@ -82,10 +79,6 @@ class MainActivity : AppCompatActivity(), TweetContract.View {
     override fun success() {
         showProgressBar(false)
         Snackbar.make(parentLayout, "Success", Snackbar.LENGTH_SHORT).show()
-    }
-
-    override fun loadRecipes(recipeResponse: RecipeResponse) {
-
     }
 
     override fun setPresenter(presenter: TweetContract.Presenter) {
