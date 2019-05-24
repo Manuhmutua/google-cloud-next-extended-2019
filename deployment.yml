@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: random-name-picker
-          image: gcr.io/meeting-nanny/github.com/manuhmutua/google-cloud-next-extended-2019
+          image: gcr.io/meeting-nanny/github.com/manuhmutua/google-cloud-next-extended-2019:latest
           ports:
             - containerPort: 8080
       restartPolicy: Always
