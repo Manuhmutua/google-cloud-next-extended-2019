@@ -21,7 +21,8 @@ steps:
   args:
     - '-c'
     - |
-      gcloud container clusters get-credentials google-cloud-next --zone=us-central1-a --project meeting-nanny
+      gcloud container clusters get-credentials google-cloud-next --zone=us-central1-a --project meeting-nanny && \
+      gcloud config set project meeting-nanny
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: apply deployment to kubernetes
