@@ -7,15 +7,15 @@ steps:
     - |
       docker build ./go-app -t gcr.io/meeting-nanny/random-name-picker:latest
 
-- name: 'gcr.io/cloud-builders/gcloud-docker'
+- name: 'gcr.io/cloud-builders/docker'
   id: push docker image to container registry
   entrypoint: /bin/sh
   args:
     - '-c'
     - |
-      gcloud docker -- push gcr.io/meeting-nanny/random-name-picker:latest
+      docker push gcr.io/meeting-nanny/random-name-picker:latest
 
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/cloud-builders/kubectl'
   id: apply deployment to kubernetes
   entrypoint: /bin/sh
   args:
