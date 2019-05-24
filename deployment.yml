@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-name-picker
+  labels:
+    app: random-name-picker
+spec:
+  selector:
+    matchLabels:
+      app: random-name-picker
+  template:
+    metadata:
+      labels:
+        app: random-name-picker
+    spec:
+      containers:
+        - name: random-name-picker
+          image: gcr.io/meeting-nanny/github.com/manuhmutua/google-cloud-next-extended-2019:latest
+          ports:
+            - containerPort: 8080
+#          env:
+#            - name: WORDPRESS_DB_HOST
+#              value: 127.0.0.1:3306
+#            # These secrets are required to start the pod.
+#            # [START cloudsql_secrets]
+#            - name: WORDPRESS_DB_USER
+#              valueFrom:
+#                secretKeyRef:
+#                  name: cloudsql-db-credentials
+#                  key: username.txt
