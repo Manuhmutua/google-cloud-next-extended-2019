@@ -18,6 +18,7 @@ spec:
           image: gcr.io/meeting-nanny/github.com/manuhmutua/google-cloud-next-extended-2019
           ports:
             - containerPort: 8080
+      restartPolicy: Always
 #          env:
 #            - name: WORDPRESS_DB_HOST
 #              value: 127.0.0.1:3306

@@ -1,0 +1,23 @@
+- name: 'gcr.io/cloud-builders/docker'
+  id: build docker image
+  entrypoint: /bin/sh
+  args:
+    - '-c'
+    - |
+      docker build ./go-app -t gcr.io/meeting-nanny/random-name-picker:latest
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: push docker image to container registry
+  entrypoint: /bin/sh
+  args:
+    - '-c'
+    - |
+      gcloud docker -- push gcr.io/meeting-nanny/random-name-picker:latest
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: push docker image to container registry
+  entrypoint: /bin/sh
+  args:
+    - '-c'
+    - |
+      kubectl apply -f deployment.yml
