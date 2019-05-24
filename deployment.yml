@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: random-name-picker
-          image: gcr.io/meeting-nanny/random-name-picker:latest
+          image: gcr.io/meeting-nanny/random-name-picker:meeting-nanny
           ports:
             - containerPort: 8080
       restartPolicy: Always

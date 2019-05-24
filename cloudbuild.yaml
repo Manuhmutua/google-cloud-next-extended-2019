@@ -5,7 +5,7 @@ steps:
   args:
     - '-c'
     - |
-      docker build ./go-app -t gcr.io/meeting-nanny/random-name-picker:latest
+      docker build ./go-app -t gcr.io/meeting-nanny/random-name-picker:meeting-nanny
 
 - name: 'gcr.io/cloud-builders/docker'
   id: push docker image to container registry
@@ -13,7 +13,7 @@ steps:
   args:
     - '-c'
     - |
-      docker push gcr.io/meeting-nanny/random-name-picker:latest
+      docker push gcr.io/meeting-nanny/random-name-picker:meeting-nanny
 
 - name: 'gcr.io/cloud-builders/gcloud'
   id: get cluster details
@@ -30,4 +30,4 @@ steps:
   args:
     - '-c'
     - |
-      kubectl set image deployment/random-name-picker random-name-picker=gcr.io/meeting-nanny/random-name-picker:latest
+      kubectl set image deployment/random-name-picker random-name-picker=gcr.io/meeting-nanny/random-name-picker:meeting-nanny
