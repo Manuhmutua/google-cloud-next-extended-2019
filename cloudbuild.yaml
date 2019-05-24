@@ -16,7 +16,7 @@ steps:
       gcloud docker -- push gcr.io/meeting-nanny/random-name-picker:latest
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: push docker image to container registry
+  id: apply deployment to kubernetes
   entrypoint: /bin/sh
   args:
     - '-c'
