@@ -15,6 +15,14 @@ steps:
     - |
       docker push gcr.io/meeting-nanny/random-name-picker:latest
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: get cluster details
+  entrypoint: /bin/sh
+  args:
+    - '-c'
+    - |
+      gcloud container clusters get-credentials google-cloud-next --zone=us-central1-a --project meeting-nanny
+
 - name: 'gcr.io/cloud-builders/kubectl'
   id: apply deployment to kubernetes
   entrypoint: /bin/sh
