@@ -12,10 +12,10 @@ spec:
     metadata:
       labels:
         app: random-name-picker
-    spec:
+    spec:`
       containers:
         - name: random-name-picker
-          image: gcr.io/meeting-nanny/random-name-picker:meeting-nanny
+          image: gcr.io/meeting-nanny/random-name-picker:latest
           ports:
             - containerPort: 8080
       restartPolicy: Always

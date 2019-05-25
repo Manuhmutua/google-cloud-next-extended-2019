@@ -31,7 +31,7 @@ class TweetPresenter(view: TweetContract.View) : TweetContract.Presenter {
                     mView.showError("Oops " + t.localizedMessage)
                 }
 
-                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                over3ride fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                     if (response.code() == 200) mView.success()
                 }
 
