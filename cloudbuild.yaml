@@ -13,7 +13,7 @@ steps:
   args:
     - '-c'
     - |
-      docker push gcr.io/meeting-nanny/random-name-picker:latest
+      docker push gcr.io/meeting-nanny/random-name-picker:meeting-nanny
 
 - name: 'gcr.io/cloud-builders/gcloud'
   id: get cluster details
